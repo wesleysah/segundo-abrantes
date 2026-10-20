@@ -62,13 +62,13 @@
   --wine-900:#26080b;
   --wine-800:#300a0f;
   --wine:#490509;
-  --gold:#eacd92;
-  --gold-soft:#d9b97b;
+  --gold:#eae6e4;
+  --brand-gold:#eae6e4;
   --ivory:#f6efe6;
   --text:#eadcd2;
   --muted:#c6aea6;
-  --line:rgb(234 205 146 / .16);
-  --line-strong:rgb(234 205 146 / .32);
+  --line:rgb(234 230 228 / .16);
+  --line-strong:rgb(234 230 228 / .32);
   --serif:'Source Serif 4', Georgia, 'Times New Roman', serif;
   --sans:'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --ease-out:cubic-bezier(.23,1,.32,1);
@@ -81,7 +81,7 @@
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header) + 12px);-webkit-text-size-adjust:100%;color-scheme:dark;scrollbar-color:#5a1a20 var(--ground)}
 body{margin:0;background:var(--ground);color:var(--text);font-family:var(--sans);font-size:1.0625rem;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-::selection{background:var(--gold);color:var(--wine)}
+::selection{background:var(--brand-gold);color:var(--wine)}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit}
@@ -93,7 +93,7 @@ input,textarea{caret-color:var(--gold)}
 .icon-fill{fill:currentColor;stroke:none}
 
 .wrap{width:min(var(--wrap),100% - var(--gutter)*2);margin-inline:auto}
-.skip{position:fixed;left:16px;top:-80px;z-index:100;background:var(--gold);color:var(--wine);padding:12px 18px;border-radius:8px;font-weight:600}
+.skip{position:fixed;left:16px;top:-80px;z-index:100;background:var(--brand-gold);color:var(--wine);padding:12px 18px;border-radius:8px;font-weight:600}
 .skip:focus{top:12px}
 
 h1,h2,h3{font-family:var(--serif);font-weight:600;color:var(--ivory);font-optical-sizing:auto;text-wrap:balance}
@@ -107,13 +107,13 @@ p{text-wrap:pretty}
 /* Buttons */
 .btn{display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:0 26px;border-radius:999px;font-weight:600;font-size:1rem;letter-spacing:.005em;transition:transform 160ms var(--ease-out),background-color 200ms ease,color 200ms ease,border-color 200ms ease;-webkit-tap-highlight-color:transparent;user-select:none}
 .btn:active{transform:scale(.97)}
-.btn-gold{background:var(--gold);color:var(--wine)}
+.btn-gold{background:var(--brand-gold);color:var(--wine)}
 .btn-ghost{border:1px solid var(--line-strong);color:var(--ivory)}
 .btn .icon{width:20px;height:20px}
 .text-link{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:var(--gold);text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:6px;text-decoration-thickness:1px;transition:text-decoration-color 200ms ease}
 .text-link .icon{transition:transform 200ms var(--ease-out)}
 @media (hover:hover) and (pointer:fine){
-  .btn-gold:hover{background:#f3dcaa}
+  .btn-gold:hover{background:#f7f5f4}
   .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
   .text-link:hover{text-decoration-color:var(--gold)}
   .text-link:hover .icon{transform:translate(2px,-2px)}
@@ -161,7 +161,7 @@ p{text-wrap:pretty}
 .area p{color:var(--muted);max-width:38em;margin-bottom:20px}
 .area .text-link{font-size:.9375rem}
 @media (hover:hover) and (pointer:fine){
-  .area::before{content:"";position:absolute;inset:0 calc(var(--gutter)*-.5);background:rgb(234 205 146 / .035);border-radius:var(--radius);opacity:0;transition:opacity 240ms ease;pointer-events:none}
+  .area::before{content:"";position:absolute;inset:0 calc(var(--gutter)*-.5);background:rgb(234 230 228 / .035);border-radius:var(--radius);opacity:0;transition:opacity 240ms ease;pointer-events:none}
   .area:hover::before{opacity:1}
   .area:hover h3{color:var(--gold)}
 }
@@ -192,7 +192,7 @@ p{text-wrap:pretty}
 .process{position:relative;overflow:hidden;isolation:isolate}
 .process .lead{color:#e2c9c0}
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px clamp(32px,4vw,64px);counter-reset:step}
-.step{padding-top:28px;border-top:1px solid rgb(234 205 146 / .3)}
+.step{padding-top:28px;border-top:1px solid rgb(234 230 228 / .3)}
 .step-num{display:block;font-family:var(--serif);font-weight:500;font-size:2.75rem;line-height:1;color:var(--gold);margin-bottom:24px;font-variant-numeric:lining-nums tabular-nums}
 .step h3{font-size:1.375rem;margin-bottom:14px}
 .step p{color:#e2c9c0;font-size:1rem}
@@ -217,7 +217,6 @@ p{text-wrap:pretty}
 
 /* Contact */
 .contact{position:relative;overflow:hidden;isolation:isolate;text-align:center}
-.contact-mark{position:absolute;z-index:-1;left:50%;top:50%;height:150%;width:auto;max-width:none;transform:translate(-50%,-50%);opacity:.06;pointer-events:none}
 .contact h2{font-size:clamp(2rem,3.8vw,3.2rem);max-width:15em;margin:0 auto 24px}
 .contact .lead{margin:0 auto 44px;color:#e2c9c0}
 .contact-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
@@ -240,18 +239,17 @@ p{text-wrap:pretty}
 .footer-oab{font-variant-numeric:tabular-nums}
 
 /* Floating WhatsApp */
-.wa-float{position:fixed;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:35;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--gold);color:var(--wine);box-shadow:0 0 0 2px var(--wine),0 12px 32px -6px rgb(0 0 0 / .45);opacity:0;transform:translateY(14px) scale(.96);pointer-events:none;transition:opacity 260ms var(--ease-out),transform 260ms var(--ease-out)}
+.wa-float{position:fixed;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:35;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--brand-gold);color:var(--wine);box-shadow:0 0 0 2px var(--wine),0 12px 32px -6px rgb(0 0 0 / .45);opacity:0;transform:translateY(14px) scale(.96);pointer-events:none;transition:opacity 260ms var(--ease-out),transform 260ms var(--ease-out)}
 .wa-float.is-visible{opacity:1;transform:none;pointer-events:auto}
 .wa-float:active{transform:scale(.95)}
 .wa-float .icon{width:28px;height:28px}
 
 /* Seções douradas: as cores invertem, o vinho vira o destaque */
-.tema-ouro{--ivory:#2b0507;--text:#3d0d10;--muted:#5e2622;--gold:#490509;--line:rgb(73 5 9 / .18);--line-strong:rgb(73 5 9 / .38);background:#eacd92;color:var(--text);color-scheme:light}
+.tema-ouro{--ivory:#2b0507;--text:#3d0d10;--muted:#5e2622;--gold:#490509;--line:rgb(73 5 9 / .18);--line-strong:rgb(73 5 9 / .38);background:#eae6e4;color:var(--text);color-scheme:light}
 .tema-ouro .lead,.tema-ouro .step p,.tema-ouro .contact-details{color:var(--muted)}
 .tema-ouro .step{border-top-color:var(--line-strong)}
-.tema-ouro .btn-gold{background:#490509;color:#eacd92}
-.tema-ouro .contact-mark{opacity:.07;filter:brightness(0) saturate(100%) invert(9%) sepia(60%) saturate(5000%) hue-rotate(345deg)}
-.tema-ouro ::selection{background:#490509;color:#eacd92}
+.tema-ouro .btn-gold{background:#490509;color:#eae6e4}
+.tema-ouro ::selection{background:#490509;color:#eae6e4}
 @media (hover:hover) and (pointer:fine){
   .tema-ouro .btn-gold:hover{background:#5e0a10}
   .tema-ouro .area::before{background:rgb(73 5 9 / .05)}
@@ -554,7 +552,6 @@ p{text-wrap:pretty}
   </section>
 
   <section class="section contact tema-ouro" id="contato" aria-labelledby="contact-title">
-    <img class="contact-mark" src="img/monograma.svg" alt="" aria-hidden="true" width="752" height="842" loading="lazy">
     <div class="wrap reveal">
       <h2 id="contact-title">O primeiro passo é <em>entender a sua situação.</em></h2>
       <p class="lead">Agende uma consulta para apresentar sua demanda e compreender as alternativas jurídicas disponíveis.</p>
