@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://segundoadvocacia.com.br/sitemap.xml
